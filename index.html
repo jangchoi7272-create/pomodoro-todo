@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>포모도로 + 할일</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <h1>🍅 포모도로 + 할일</h1>
+
+    <section class="timer-card">
+      <div class="mode-tabs">
+        <button class="mode-btn active" data-mode="focus" data-min="25">집중 25분</button>
+        <button class="mode-btn" data-mode="short" data-min="5">짧은 휴식 5분</button>
+        <button class="mode-btn" data-mode="long" data-min="15">긴 휴식 15분</button>
+      </div>
+
+      <div class="timer-display" id="timerDisplay">25:00</div>
+
+      <div class="timer-controls">
+        <button id="startBtn">시작</button>
+        <button id="pauseBtn" disabled>일시정지</button>
+        <button id="resetBtn">리셋</button>
+      </div>
+
+      <p class="session-count">완료한 집중 세션: <span id="sessionCount">0</span>회</p>
+    </section>
+
+    <section class="todo-card">
+      <h2>할 일 목록</h2>
+      <form id="todoForm">
+        <input type="text" id="todoInput" placeholder="할 일을 입력하세요" autocomplete="off">
+        <button type="submit">추가</button>
+      </form>
+      <ul id="todoList"></ul>
+    </section>
+  </div>
+
+  <audio id="alarmSound" src="data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
